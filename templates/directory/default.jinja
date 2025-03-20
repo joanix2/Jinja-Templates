@@ -1,0 +1,8 @@
+- name: {{ name }}
+  type: directory
+  {% if children %}
+  children:
+  {% for child in children %}
+{{ child.default | indent(4, true) }}
+  {% endfor %}
+  {% endif %}
